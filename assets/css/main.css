@@ -1,0 +1,119 @@
+/* Designsystem – siehe DESIGN.md. Vier Farben, keine weiteren. */
+:root {
+  --puder: #EAD5D2;   /* Grund: gedämpftes Rosa */
+  --creme: #F4EEE6;   /* Tafeln, Flächen */
+  --tinte: #3B2A26;   /* Schrift */
+  --gold:  #B49A5E;   /* nur Linie und Ornament, nie Fläche */
+
+  --schrift: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --mass: 38rem;      /* Zeilenlänge ca. 70 Zeichen */
+  --abstand: 1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { background: var(--puder); color: var(--tinte); }
+body {
+  margin: 0;
+  font-family: var(--schrift);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+a { color: var(--tinte); text-decoration-color: var(--gold); text-underline-offset: .2em; }
+a:focus-visible { outline: 1px solid var(--tinte); outline-offset: 4px; }
+
+/* Kopf: das Schild */
+.kopf { padding: calc(var(--abstand) * 2) var(--abstand) var(--abstand); }
+
+.schild {
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  background: var(--creme);
+  border: 1px solid var(--gold);
+  outline: 1px solid var(--gold);
+  outline-offset: 5px;
+  text-decoration: none;
+}
+.schild-titel {
+  display: block;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.schild-unter { display: block; font-size: .95rem; letter-spacing: .08em; }
+
+.ornament { display: block; margin: var(--abstand) auto; max-width: 60%; height: auto; }
+
+.navigation ul, .sprachen, .fuss ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 2rem;
+}
+.navigation a { text-decoration: none; letter-spacing: .06em; }
+.navigation a[aria-current] { text-decoration: underline; text-decoration-color: var(--gold); }
+
+.werkzeuge { max-width: var(--mass); margin: var(--abstand) auto 0; }
+.sprachen { gap: .25rem 1rem; margin-top: .75rem; font-size: .9rem; }
+.sprachen a { text-decoration: none; }
+.sprachen a[aria-current] { text-decoration: underline; text-decoration-color: var(--gold); }
+
+/* Pagefind an die Palette anpassen: matt, keine Rundungen, kein Schatten */
+.suche {
+  --pagefind-ui-scale: .85;
+  --pagefind-ui-primary: var(--tinte);
+  --pagefind-ui-text: var(--tinte);
+  --pagefind-ui-background: var(--creme);
+  --pagefind-ui-border: var(--gold);
+  --pagefind-ui-tag: var(--puder);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 0;
+  --pagefind-ui-font: var(--schrift);
+  text-align: left;
+}
+
+/* Inhalt */
+main { padding: var(--abstand); }
+
+.einleitung, .artikel { max-width: var(--mass); margin: 0 auto; }
+.artikel { text-align: left; background: var(--creme); padding: 2rem 2.5rem; border: 1px solid var(--gold); }
+.artikel h1 { text-align: center; font-weight: normal; letter-spacing: .1em; font-size: 1.8rem; margin-top: 0; }
+.artikel h2 { font-weight: normal; font-size: 1.3rem; margin-top: 2em; }
+
+.artikel table { width: 100%; border-collapse: collapse; margin: 1.5em 0; display: block; overflow-x: auto; }
+.artikel th, .artikel td { border-bottom: 1px solid var(--gold); padding: .4em .6em; text-align: left; }
+
+.liste { list-style: none; padding: 0; }
+.liste li { padding: .75em 0; border-bottom: 1px solid var(--gold); }
+.liste span { display: block; font-size: .95rem; }
+
+.offenlegung { font-size: .95rem; border-top: 1px solid var(--gold); padding-top: 1em; margin-top: 2em; }
+
+/* Startseite: das Regal (symmetrisch, 2 x 2) */
+.regal {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--abstand);
+  max-width: 48rem;
+  margin: calc(var(--abstand) * 2) auto;
+}
+.fach {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: 11rem;
+  padding: 1.5rem;
+  background: var(--creme);
+  border: 1px solid var(--gold);
+  text-decoration: none;
+}
+.fach-name { font-size: 1.2rem; letter-spacing: .18em; text-transform: uppercase; }
+.fach-text { font-size: .95rem; margin-top: .5rem; }
+
+/* Fuß */
+.fuss { padding: var(--abstand) var(--abstand) calc(var(--abstand) * 2); font-size: .9rem; }
+.fuss p { margin: 1rem 0 0; }
+
+@media (max-width: 40rem) {
+  .regal { grid-template-columns: 1fr; }
+  .schild { padding: 1rem 1.5rem; }
+  .artikel { padding: 1.5rem 1.25rem; }
+}

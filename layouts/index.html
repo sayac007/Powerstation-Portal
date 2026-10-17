@@ -1,0 +1,11 @@
+{{ define "main" }}
+<section class="einleitung">{{ .Content }}</section>
+<div class="regal">
+  {{- range where site.Menus.main "Weight" "lt" 50 }}
+  <a class="fach" href="{{ .URL }}">
+    <span class="fach-name">{{ .Name }}</span>
+    {{- with .Page }}<span class="fach-text">{{ .Description }}</span>{{ end }}
+  </a>
+  {{- end }}
+</div>
+{{ end }}

@@ -1,0 +1,201 @@
+# Platzhalter-Domain – vor Veröffentlichung ersetzen
+baseURL = "https://example.org/"
+defaultContentLanguage = "de"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+title = "Powerstation-Portal"
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+# ---------- Sprachen ----------
+[languages.de]
+  languageName = "Deutsch"
+  languageCode = "de-DE"
+  contentDir = "content/de"
+  weight = 1
+  [languages.de.params]
+    tagline = "Erfahrung · Messung · Reparatur"
+    description = "Powerstationen aus eigener Erfahrung: Einsatz, Reparatur und unabhängige Tests mit eigenen Messwerten."
+
+[languages.en]
+  languageName = "English"
+  languageCode = "en"
+  contentDir = "content/en"
+  weight = 2
+  [languages.en.params]
+    tagline = "Experience · Measurement · Repair"
+    description = "Portable power stations from first-hand experience: use, repair and independent tests with our own measurements."
+
+[languages.ru]
+  languageName = "Русский"
+  languageCode = "ru"
+  contentDir = "content/ru"
+  weight = 3
+  [languages.ru.params]
+    tagline = "Опыт · Измерения · Ремонт"
+    description = "Портативные электростанции на основе собственного опыта: применение, ремонт и независимые тесты с собственными измерениями."
+
+[languages.uk]
+  languageName = "Українська"
+  languageCode = "uk"
+  contentDir = "content/uk"
+  weight = 4
+  [languages.uk.params]
+    tagline = "Досвід · Вимірювання · Ремонт"
+    description = "Портативні електростанції з власного досвіду: застосування, ремонт і незалежні тести з власними вимірюваннями."
+
+[languages.it]
+  languageName = "Italiano"
+  languageCode = "it"
+  contentDir = "content/it"
+  weight = 5
+  [languages.it.params]
+    tagline = "Esperienza · Misure · Riparazione"
+    description = "Power station portatili per esperienza diretta: utilizzo, riparazione e test indipendenti con misure proprie."
+
+# ---------- Menüs (max. 5 Einträge, Regel 1) ----------
+[[languages.de.menus.main]]
+  name = "Einsatz"
+  pageRef = "/einsatz"
+  weight = 10
+[[languages.de.menus.main]]
+  name = "Reparatur"
+  pageRef = "/reparatur"
+  weight = 20
+[[languages.de.menus.main]]
+  name = "Tests"
+  pageRef = "/tests"
+  weight = 30
+[[languages.de.menus.main]]
+  name = "Grundlagen"
+  pageRef = "/grundlagen"
+  weight = 40
+[[languages.de.menus.main]]
+  name = "Forum"
+  pageRef = "/forum"
+  weight = 50
+[[languages.de.menus.footer]]
+  name = "Impressum"
+  pageRef = "/impressum"
+  weight = 10
+[[languages.de.menus.footer]]
+  name = "Datenschutz"
+  pageRef = "/datenschutz"
+  weight = 20
+
+[[languages.en.menus.main]]
+  name = "Use"
+  pageRef = "/use"
+  weight = 10
+[[languages.en.menus.main]]
+  name = "Repair"
+  pageRef = "/repair"
+  weight = 20
+[[languages.en.menus.main]]
+  name = "Tests"
+  pageRef = "/tests"
+  weight = 30
+[[languages.en.menus.main]]
+  name = "Basics"
+  pageRef = "/basics"
+  weight = 40
+[[languages.en.menus.main]]
+  name = "Forum"
+  pageRef = "/forum"
+  weight = 50
+[[languages.en.menus.footer]]
+  name = "Imprint"
+  pageRef = "/imprint"
+  weight = 10
+[[languages.en.menus.footer]]
+  name = "Privacy"
+  pageRef = "/privacy"
+  weight = 20
+
+[[languages.ru.menus.main]]
+  name = "Применение"
+  pageRef = "/primenenie"
+  weight = 10
+[[languages.ru.menus.main]]
+  name = "Ремонт"
+  pageRef = "/remont"
+  weight = 20
+[[languages.ru.menus.main]]
+  name = "Тесты"
+  pageRef = "/testy"
+  weight = 30
+[[languages.ru.menus.main]]
+  name = "Основы"
+  pageRef = "/osnovy"
+  weight = 40
+[[languages.ru.menus.main]]
+  name = "Форум"
+  pageRef = "/forum"
+  weight = 50
+[[languages.ru.menus.footer]]
+  name = "Импрессум"
+  pageRef = "/imprint"
+  weight = 10
+[[languages.ru.menus.footer]]
+  name = "Конфиденциальность"
+  pageRef = "/privacy"
+  weight = 20
+
+[[languages.uk.menus.main]]
+  name = "Застосування"
+  pageRef = "/zastosuvannia"
+  weight = 10
+[[languages.uk.menus.main]]
+  name = "Ремонт"
+  pageRef = "/remont"
+  weight = 20
+[[languages.uk.menus.main]]
+  name = "Тести"
+  pageRef = "/testy"
+  weight = 30
+[[languages.uk.menus.main]]
+  name = "Основи"
+  pageRef = "/osnovy"
+  weight = 40
+[[languages.uk.menus.main]]
+  name = "Форум"
+  pageRef = "/forum"
+  weight = 50
+[[languages.uk.menus.footer]]
+  name = "Імпресум"
+  pageRef = "/imprint"
+  weight = 10
+[[languages.uk.menus.footer]]
+  name = "Конфіденційність"
+  pageRef = "/privacy"
+  weight = 20
+
+[[languages.it.menus.main]]
+  name = "Utilizzo"
+  pageRef = "/utilizzo"
+  weight = 10
+[[languages.it.menus.main]]
+  name = "Riparazione"
+  pageRef = "/riparazione"
+  weight = 20
+[[languages.it.menus.main]]
+  name = "Test"
+  pageRef = "/test"
+  weight = 30
+[[languages.it.menus.main]]
+  name = "Basi"
+  pageRef = "/basi"
+  weight = 40
+[[languages.it.menus.main]]
+  name = "Forum"
+  pageRef = "/forum"
+  weight = 50
+[[languages.it.menus.footer]]
+  name = "Note legali"
+  pageRef = "/imprint"
+  weight = 10
+[[languages.it.menus.footer]]
+  name = "Privacy"
+  pageRef = "/privacy"
+  weight = 20

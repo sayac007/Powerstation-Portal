@@ -1,0 +1,17 @@
+<footer class="fuss">
+  <img class="ornament" src="{{ "ornament.svg" | relURL }}" alt="" width="240" height="24">
+  <ul>
+    {{- range site.Menus.footer }}
+    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    {{- end }}
+  </ul>
+  <p>© {{ now.Year }} {{ site.Title }}</p>
+</footer>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    if (window.PagefindUI) {
+      new PagefindUI({ element: "#suche", showImages: false, resetStyles: false });
+    }
+  });
+</script>

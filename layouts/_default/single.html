@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="artikel">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{- with .Params.testgeraet_erhalten }}
+  <p class="offenlegung">{{ i18n "disclosure" }}: {{ . }}</p>
+  {{- end }}
+</article>
+{{ end }}
