@@ -2,14 +2,20 @@
 
 Statische, mehrsprachige Seite mit Hugo (extended, ab Version 0.128) und Pagefind für die Suche.
 
-## Entwicklung (offline)
+**Projektstatus:** Die Veröffentlichung ist in Vorbereitung. Offene Punkte stehen in der [Checkliste](#vor-der-veröffentlichung).
 
-    hugo server            # http://localhost:1313/de/
+## Produktionsbuild mit Suche lokal prüfen
 
-Die Suche funktioniert im Entwicklungsserver nicht, weil Pagefind seinen Index erst aus der fertigen Seite erzeugt. Mit Suche:
+Benötigt werden Hugo Extended und entweder Node.js mit `npx` oder eine Python-Umgebung mit installiertem Pagefind. Im Repository-Ordner ausführen:
 
-    hugo --minify
-    npx -y pagefind --site public --serve     # oder: python -m pagefind --site public --serve
+```sh
+hugo --minify
+npx -y pagefind --site public --serve
+```
+
+Mit installiertem Python-Paket kannst du den zweiten Befehl durch `python -m pagefind --site public --serve` ersetzen. Öffne die angezeigte lokale Adresse, wechsle in eine Sprachversion und suche nach dem Titel eines vorhandenen Tests.
+
+Für die schnelle Vorschau beim Schreiben startet `hugo server` die Entwicklungsseite unter `http://localhost:1313/de/`. Pagefind benötigt für die Suche den fertigen Build.
 
 ## Neuer Test
 
